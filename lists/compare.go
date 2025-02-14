@@ -5,5 +5,13 @@ package lists
 // Sie können die Hilfsfunktion Empty aus empty.go verwenden.
 func ListsEqual(list1, list2 []int) bool {
 	// TODO
-	return false
+
+	if Empty(list1) && Empty(list2) {
+		return true
+	}
+	if Empty(list1) || Empty(list2) {
+		return false
+	}
+
+	return list1[0] == list2[0] && ListsEqual(list1[1:], list2[1:])
 }

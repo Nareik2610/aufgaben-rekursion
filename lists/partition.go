@@ -9,5 +9,6 @@ func Partition(list []int, key int) ([]int, []int) {
 	l2 := append([]int{}, list...)
 
 	// TODO
+
 	return l1, l2
 }

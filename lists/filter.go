@@ -11,7 +11,13 @@ func FilterLess(list []int, key int) []int {
 	// plus die gefilterte Restliste.
 
 	// TODO
-	return list
+	if Empty(list) {
+		return list
+	}
+	if key >= list[0] {
+		return append(list[:1], FilterLess(list[1:], key)...)
+	}
+	return FilterLess(list[1:], key)
 }
 
 // Liefert eine Liste mit allen Elementen aus list, die echt größer als key sind.
