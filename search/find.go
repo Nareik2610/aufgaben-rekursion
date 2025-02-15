@@ -5,5 +5,11 @@ package search
 // wird -1 zurückgegeben.
 func Find(list []int, x int) int {
 	// TODO
-	return -1
+	if len(list) == 0 {
+		return -1
+	}
+	if list[0] == x {
+		return 0
+	}
+	return Find(list[1:], x) + 1
 }

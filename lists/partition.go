@@ -10,5 +10,5 @@ func Partition(list []int, key int) ([]int, []int) {
 
 	// TODO
 
-	return l1, l2
+	return FilterLess(l1, key), FilterGreater(l2, key)
 }

@@ -25,5 +25,11 @@ func FilterLess(list []int, key int) []int {
 // Sie können die Hilfsfunktion Empty aus empty.go verwenden.
 func FilterGreater(list []int, key int) []int {
 	// TODO
-	return list
+	if Empty(list) {
+		return list
+	}
+	if key < list[0] {
+		return append(list[:1], FilterGreater(list[1:], key)...)
+	}
+	return FilterGreater(list[1:], key)
 }
