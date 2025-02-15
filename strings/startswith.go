@@ -6,9 +6,10 @@ func StartsWith(s, seq string) bool {
 	if seq == "" {
 		return true
 	}
-	if s == "" {
+	if len(s) < len(seq) {
 		return false
 	}
-	return s[0] == seq[0]
+
+	return s[:len(seq)] == seq
 
 }

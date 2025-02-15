@@ -6,9 +6,12 @@ func Contains(s, seq string) bool {
 	if seq == "" {
 		return true
 	}
-	if s == "" {
+	if len(s) < len(seq) {
 		return false
 	}
+	if StartsWith(s, seq) {
+		return true
+	}
 
-	return StartsWith(s[1:], seq[1:]) || Contains(s[1:], seq)
+	return Contains(s[1:], seq)
 }
